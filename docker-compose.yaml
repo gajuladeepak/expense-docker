@@ -1,0 +1,23 @@
+version: "3"
+networks:
+  expense:
+volumes:
+  mysql: #docker volume create mysql
+services:
+  mysql:
+    image: deepakgajula/mysql:v1
+    container_name: mysql #i can give name to the container
+    volumes: #mapping the volumes
+    - mysql:/var/lib/mysql # -v mysql:/var/lib/mysql
+  backend:
+    image: deepakgajula/backend:v1
+    container_name: backend
+    depends_on:
+    - mysql
+  frontend:
+    image: deepakgajula/frontend:v1
+    container_name: frontend
+    ports:
+    - 80:80
+    depends_on:
+    - frontend
