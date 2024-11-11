@@ -29,7 +29,7 @@ EXPOSE 8080
 ENV DB_HOST="mysql"
 RUN addgroup -S expense && adduser -S appuser -G expense
 #opt- optional
-RUN mkdir /opt/server.
+RUN mkdir /opt/server
 RUN chown -R expense:expense /opt/server
 
 #moving to the directory
