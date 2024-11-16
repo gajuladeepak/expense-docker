@@ -1,5 +1,3 @@
-
-
 #before best practices implemented
 # FROM node:20
 # EXPOSE 8080
@@ -19,9 +17,6 @@
 
 # #running it
 # CMD ["node","index.js"]
-
-
-
 #session 47
 FROM node:20 AS builder
 WORKDIR /opt/server
