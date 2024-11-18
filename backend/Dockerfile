@@ -26,5 +26,7 @@ RUN mkdir /opt/server
 WORKDIR /opt/server
 COPY package.json .
 COPY *.js .
-RUN npm install  #All the dependencies will get installed with this command
-CMD ["node", "index.js"] #after installing all the dependencies we will write system service nothing but running index.js 
+RUN npm install  
+#All the dependencies will get installed with this command
+CMD ["node", "index.js"] 
+#after installing all the dependencies we will write system service nothing but running index.js 
