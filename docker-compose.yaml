@@ -3,9 +3,9 @@ networks:
   expense:
 volumes:
   mysql: #docker volume create mysql
-services:
+services: #services are nothing but docker run, docker built commands
   mysql:
-    image: deepakgajula/mysql:v1
+    image: deepakgajula/mysql:v1 #we are pulling image from docker hub here
     container_name: mysql #i can give name to the container
     volumes: #mapping the volumes
     - mysql:/var/lib/mysql # -v mysql:/var/lib/mysql
@@ -22,3 +22,12 @@ services:
     - 80:80
     depends_on:
     - backend
+#docker network create expense
+#docker volume create mysql
+#services
+#mysql
+#docker run -d -v mysql:/var/lib/mysql  --name mysql --network expense mysql:v1
+#backend
+#docker run -d --name backend --network expense backend:v1
+#frontend
+#docker run -d  -p 80:80 --name frontend --network expense frontend:v1
